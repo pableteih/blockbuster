@@ -12,6 +12,9 @@
   </div>
 
   <p style="font-size: 16px; color: #555; margin-bottom: 0;">
-    <strong>Nombre:</strong> <%= client.movie.name %>
+    <%= client.movie.name %>
   </p>
+  <div style="width: 100px; height: 100px; overflow: hidden;">
+    <%= image_tag client.movie.image, style: "width: 100%; height: 100%; object-fit: cover;" %>
+  </div>
 </div>
