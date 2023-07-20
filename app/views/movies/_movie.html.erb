@@ -1,0 +1,20 @@
+<div id="<%= dom_id(movie) %>" style="width: 50%; padding: 20px; background-color: #f2f2f2; border: 1px solid #ccc; margin-bottom: 20px;">
+  <p style="font-size: 18px; color: #333; margin-bottom: 10px;">
+    <strong>Nombre:</strong> <%= movie.name %>
+  </p>
+
+  <%= image_tag movie.image, style: "max-width: 100%; height: auto; margin-bottom: 10px;" %>
+
+  <% if movie.clients.present? %>
+    <p style="font-size: 16px; color: #333; margin-bottom: 5px;">Clientes:</p>
+    <ul style="list-style: none; padding: 0;">
+      <% movie.clients.each do |client| %>
+        <li style="margin-bottom: 5px;">
+          <strong>Nombre del cliente:</strong> <%= client.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No hay clientes actualmente rentando esta película</p>
+  <% end %>
+</div>

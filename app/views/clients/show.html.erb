@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @client %>
+
+<div>
+  <%= link_to "Asignar pelicula", edit_client_path(@client), class:"btn btn-outline-secondary" %> |
+  <%= link_to "Volver a los clientes", clients_path, class:"btn btn-outline-secondary" %>
+
+  <%= button_to "Eliminar este cliente", @client, method: :delete, class:"btn btn-outline-secondary" %>
+</div>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<div id="clients" class="row">
+  <% @clients.each_slice(3) do |client_slice| %>
+    <div class="row">
+      <% client_slice.each do |client| %>
+        <div class="col-md-4">
+          <%= render client %>
+          <p>
+            <%= link_to "Ir a este cliente", client, class: "btn btn-outline-secondary" %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Ingresar nuevo cliente", new_client_path, class: "btn btn-outline-secondary" %>
